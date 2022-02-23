@@ -1,0 +1,21 @@
+{
+  "id": "tweetprize-ad96498f-36dd-4075-a4b8-2367b2d49c54",
+  "name": "myProcess2.bpmn",
+  "extensions": {
+    "tweetprize-ad96498f-36dd-4075-a4b8-2367b2d49c54": {
+      "properties": {},
+      "mappings": {
+        "Task_01qv35a": {
+          "mappingType": "MAP_ALL"
+        },
+        "Task_0mwau71": {
+          "mappingType": "MAP_ALL"
+        },
+        "Task_0rndcbk": {
+          "mappingType": "MAP_ALL"
+        }
+      },
+      "constants": {}
+    }
+  }
+}

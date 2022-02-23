@@ -1,0 +1,21 @@
+{
+  "id": "launchCampaign",
+  "name": "myProcess2.bpmn",
+  "extensions": {
+    "launchCampaign": {
+      "properties": {},
+      "mappings": {
+        "Task_1awp07g": {
+          "mappingType": "MAP_ALL"
+        },
+        "Task_0unqc1t": {
+          "mappingType": "MAP_ALL"
+        },
+        "Task_0f22fze": {
+          "mappingType": "MAP_ALL"
+        }
+      },
+      "constants": {}
+    }
+  }
+}

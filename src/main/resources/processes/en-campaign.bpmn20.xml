@@ -33,7 +33,7 @@
     <bpmn:endEvent id="EndEvent_08kvsha">
       <bpmn:incoming>SequenceFlow_0j9oov8</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="Task_1awp07g" name="Process &#38; Evaluate" implementation="Process English Tweet">
+    <bpmn:serviceTask id="Task_1awp07g" name="Process &#38; Evaluate" implementation="TwitterProcessing">
       <bpmn:incoming>SequenceFlow_1q79mjk</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ut4p9i</bpmn:outgoing>
     </bpmn:serviceTask>

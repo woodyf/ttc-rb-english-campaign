@@ -1,5 +1,7 @@
 package org.activiti.cloud.runtime.controllers;
 
+import static net.logstash.logback.marker.Markers.append;
+
 import org.activiti.cloud.runtime.services.CampaignService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,41 +11,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import static net.logstash.logback.marker.Markers.append;
-
 @RequestMapping(path = "/v1")
 @RestController
 public class CampaignController {
 
-    private Logger logger = LoggerFactory.getLogger(CampaignController.class);
+	private Logger logger = LoggerFactory.getLogger(CampaignController.class);
 
-    @Value("${spring.application.name}")
-    private String appName;
+	@Value("${spring.application.name}")
+	private String appName;
 
-    @Autowired
-    private CampaignService campaignService;
+	@Autowired
+	private CampaignService campaignService;
 
-    public CampaignController() {
+	public CampaignController() {
 
-    }
+	}
 
-    @RequestMapping(path = "/")
-    public String helloFromGateway() {
-        return "Hello from the Trending Topic Campaign Named: " + appName + " with topic: " + campaignService.getCurrentTopic();
-    }
+	@RequestMapping(path = "/")
+	public String helloFromGateway() {
+		return "Hello from the Trending Topic Campaign Named: " + appName + " with topic: "
+				+ campaignService.getCurrentTopic();
+	}
 
-    @RequestMapping(method = RequestMethod.GET, path = "/topic")
-    public String getCurrentTopic() {
-        return campaignService.getCurrentTopic();
-    }
+	@RequestMapping(method = RequestMethod.GET, path = "/topic")
+	public String getCurrentTopic() {
+		return campaignService.getCurrentTopic();
+	}
 
-    public boolean matchTopic(String text,
-                              String author) {
-        boolean match = text.toLowerCase().contains(campaignService.getCurrentTopic().toLowerCase());
-        logger.info(append("service-name",
-                           appName),
-                    (match ? "Match " : "Non-match") + " for '" + campaignService.getCurrentTopic() + "' on Tweet by " + author);
-        return match;
-    }
+	public boolean matchTopic(String text, String author) {
+		boolean match = text.toLowerCase().contains(campaignService.getCurrentTopic().toLowerCase());
+		logger.info(append("service-name", appName), (match ? "Match " : "Non-match") + " for '"
+				+ campaignService.getCurrentTopic() + "' on Tweet by " + author);
+		return match;
+	}
 }
-
